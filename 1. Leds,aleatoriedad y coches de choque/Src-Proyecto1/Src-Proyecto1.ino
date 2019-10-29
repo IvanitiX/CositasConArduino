@@ -1,78 +1,93 @@
 /*
   Proyecto 1. Encendido de LEDs aleatorio
-  Iv√°n V.R // IvanitiX
+  Autor: Iv·n V.R // IvanitiX
 */
 
-// set pin numbers:
-int led1Pin = 4;            // the number of the LED1 pin
-int led2Pin = 5;            // the number of the LED2 pin
-int led3Pin = 6;
+// Asignar pines:
+int led1Pin = 4;            // El numero del pin del LED1
+int led2Pin = 5;            // El numero del pin del LED2
+int led3Pin = 6;			// El numero del pin del LED2
 
 void setup() {
-  // initialize the LED pin as an output:
+
+  // Inicializa los pin de los LED como salida:
+
   pinMode(led1Pin, OUTPUT);
   pinMode(led2Pin, OUTPUT);
   pinMode(led3Pin, OUTPUT);
-}
+
+} //Final setup
 
 void loop() {
+
   int aleatorio = random(0,7);
 
   switch(aleatorio){
-  case 0: 
-  digitalWrite(led1Pin, LOW);   // turn the LED1 on
-  digitalWrite(led2Pin, LOW);    // turn the LED2 off
-  digitalWrite(led3Pin, LOW) ;
-  delay(50);   
-  break;
 
-  case 1:
-  digitalWrite(led1Pin, HIGH);   // turn the LED1 on
-  digitalWrite(led2Pin, LOW);    // turn the LED2 off
-  digitalWrite(led3Pin, LOW) ;
-  delay(50);                   // wait for a second
-  break;
+  case 0: //Los tres LED apagados
 
-  case 2:
-  digitalWrite(led1Pin, LOW);    // turn the LED1 off
-  digitalWrite(led2Pin, HIGH);   // turn the LED2 on
-  digitalWrite(led3Pin, LOW);
-  delay(50);                   // wait for a second
-  break;
+  	digitalWrite(led1Pin, LOW);   
+  	digitalWrite(led2Pin, LOW);
+  	digitalWrite(led3Pin, LOW);
+  	delay(50);   
+  	break;
 
-  case 3:
-  digitalWrite(led1Pin, LOW);    // turn the LED1 off
-  digitalWrite(led2Pin, LOW);   // turn the LED2 on
-  digitalWrite(led3Pin, HIGH);
-  delay(50);                   // wait for a second
-  break;
+  case 1: //El LED1 encendido y el resto apagados
 
-  case 4:
-   digitalWrite(led1Pin, HIGH);    // turn the LED1 off
-  digitalWrite(led2Pin, HIGH);   // turn the LED2 on
-  digitalWrite(led3Pin, LOW);
-  delay(50);                   // wait for a second
-  break;
+  	digitalWrite(led1Pin, HIGH);
+  	digitalWrite(led2Pin, LOW);
+  	digitalWrite(led3Pin, LOW);
+  	delay(50);
+  	break;
 
-  case 5:
-    digitalWrite(led1Pin, HIGH);    // turn the LED1 off
-  digitalWrite(led2Pin, LOW);   // turn the LED2 on
-  digitalWrite(led3Pin, HIGH);
-  delay(50);                   // wait for a second
-  break;
+  case 2: //El LED2 encendido y el resto apagados
 
-  case 6:
-    digitalWrite(led1Pin, LOW);    // turn the LED1 off
-  digitalWrite(led2Pin, HIGH);   // turn the LED2 on
-  digitalWrite(led3Pin, HIGH);
-  delay(50);                   // wait for a second
-  break;
+  	digitalWrite(led1Pin, LOW);
+  	digitalWrite(led2Pin, HIGH);
+  	digitalWrite(led3Pin, LOW);
+  	delay(50);
+  	break;
 
-  case 7:
-    digitalWrite(led1Pin, HIGH);    // turn the LED1 off
-  digitalWrite(led2Pin, HIGH);   // turn the LED2 on
-  digitalWrite(led3Pin, HIGH);
-  delay(50);                   // wait for a second
-  break;
-  }
-}
+  case 3: //El LED3 encendido y el resto apagados
+
+  	digitalWrite(led1Pin, LOW);
+  	digitalWrite(led2Pin, LOW);
+  	digitalWrite(led3Pin, HIGH);
+  	delay(50);
+  	break;
+
+  case 4: //Los LED1 y LED2 encendidos y el otro apagado
+
+  	digitalWrite(led1Pin, HIGH);
+  	digitalWrite(led2Pin, HIGH);
+  	digitalWrite(led3Pin, LOW);
+  	delay(50);
+  	break;
+
+  case 5: //Los LED1 y LED3 encendidos y el otro apagado 
+
+digitalWrite(led1Pin, HIGH);
+digitalWrite(led2Pin, LOW);
+digitalWrite(led3Pin, HIGH);
+delay(50);
+break;
+
+  case 6: //Los LED2 y LED3 encendidos y el otro apagado
+
+  	digitalWrite(led1Pin, LOW);
+  	digitalWrite(led2Pin, HIGH);
+  	digitalWrite(led3Pin, HIGH);
+  	delay(50);
+  	break;
+
+  case 7: //Los tres LED encendidos
+
+  	digitalWrite(led1Pin, HIGH);
+  	digitalWrite(led2Pin, HIGH);
+  	digitalWrite(led3Pin, HIGH);
+  	delay(50);
+  	break;
+
+  } //Final switch
+
+} //Final loop
